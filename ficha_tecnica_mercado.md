@@ -1,33 +1,5 @@
 
-# O Mercado – Ficha Técnica
-
-## Projeto  
-**O Mercado – Segmentação de base de clientes**
-
----
-
-## Cenário
-- O mercado não conhece mais o perfil dos seus clientes;  
-- O ambiente está mais competitivo e os clientes mudaram suas preferências;  
-- Eles querem fidelizar os clientes mas não sabem como.
-
----
-
-## Objetivo  
-Compreender o perfil e comportamento dos clientes da loja **"O Mercado"** por meio da segmentação baseada em **RFM**:
-- Identificar diferentes perfis de consumidores (em grupos);  
-- Identificar onde priorizar os esforços;  
-- Apoiar estratégias de marketing e retenção por meio do conhecimento dos clientes (informações ocultas);  
-- Identificar insights para tomada de decisões mais eficazes (ex: características de oferta de produtos).
-
----
-
-## Ferramentas e Tecnologias  
-- **Google Sheets** – limpeza, organização e análise dos dados  
-- **Looker Studio** – criação de dashboard, gráficos e análises visuais  
-- **Google Slides** – apresentação dos resultados
-
----
+# O Mercado – Ficha Técnica.
 
 ## Processamento e Análises
 
@@ -37,7 +9,7 @@ Compreender o perfil e comportamento dos clientes da loja **"O Mercado"** por me
    - Valores nulos em `salario_anual_dolar` foram preenchidos com a média.
    - Valores nulos em `id_cliente` da planilha `transacoes` foram removidos com a fórmula:
      ```
-     =QUERY(IMPORTRANGE("link_planilha_transacoes"; "transacoes!A1:D"); "SELECT * WHERE Col2 IS NOT NULL"; 1)
+     (=QUERY(IMPORTRANGE("link_planilha_transacoes"; "transacoes!A1:D"); "SELECT * WHERE Col2 IS NOT NULL"; 1)
      ```
    - Duplicidades na planilha `resumo_compras` foram identificadas via formatação condicional e removidas com `UNIQUE`.
    - Outliers em `ano_nascimento` foram mantidos por representarem uma parcela ínfima.
@@ -52,24 +24,31 @@ Compreender o perfil e comportamento dos clientes da loja **"O Mercado"** por me
 
 5. Análise **RFM** utilizando: `CONT.SE`, `DIAS360`, `SOMA`, `PROCV`.
 
-6. Conversão para Scores (`1–4`) com base em `QUARTIL`. Segmentação em 6 grupos com base em Recência e média entre Frequência e Valor Monetário.
+6. Conversão para Scores (`1–4`) com base em `QUARTIL`. Segmentação em 6 grupos com base em Recência e média entre Frequência e Valor Monetário.  ![image](https://github.com/user-attachments/assets/d1462027-7c5c-4017-8749-fa075a0cd6e8)
 
-7. Visualização dos dados no **Looker Studio** em um dashboard interativo.
+
+7. Com todos os dados necessários prontos, estes foram visualizados e analisados no **Looker Studio** a partir da criação de um dashboard interativo. Aqui foram identificados os padrões, tendências e priorização dos segmentos. Atenção aqui para o fato de que nesta análise foi escolhido priorizar os segmentos por receita gerada e não pela quantidade de clientes. 
 
 ---
 
 ## Resultados e Observações / Insights
 
-- Queda de mais de 50% nas transações após pico em maio/2022.
-- Público predominante: ticket médio alto, Geração X e Baby Boomers, com graduação, parceiro e filhos.
-- Vendas concentradas em vinhos e carnes.
-- 29% das vendas são online – canal físico ainda predominante.
-- Potencial de fidelização com atendimento presencial diferenciado.
-- Reforço ao canal digital com benefícios exclusivos.
-- Uso de dados comportamentais para campanhas personalizadas.
-- Grupos prioritários: **Precisam de Atenção**, **Promissores**, **Leais de Ouro**.
-- Grupo **Recém-Chegados** tem grande potencial para fidelização.
-- Sugestão: criar programa de fidelidade baseado na segmentação.
+- A base demonstra uma queda expressiva nas transações. Em maio de 2022 houve um pico nas vendas e depois houve uma queda de mais de 50% até dezembro do mesmo ano. Isso pode indicar perda de engajamento, no entanto, a base de dados atual não permite investigar com precisão o porquê, mas o dado pede atenção. 
+
+- Em geral a loja tem um público de ticket médio alto, com predominância da Geração X e Baby Boomers graduados, com parceiro e pelo menos 1 criança em casa. 
+- Há uma forte concentração de vendas em vinhos e carnes indicando um possível posicionamento mais nichado, ou até mesmo uma falta de variedade na oferta. 
+- 29% das vendas são feitas online, mostrando que o canal digital tem força - mas a loja física ainda é predominante. 
+- A presença dos clientes na loja física demonstra um potencial para a oferta de um atendimento de excelência em conjunto com uma experiência diferenciada que fideliza esses clientes. 
+
+- Reforçar o canal digital para o público que já o utiliza através de benefícios exclusivos. 
+
+- Usar os dados comportamentais para campanhas com recomendações baseadas em últimas compras e frequência.
+- Ao segmentar os clientes, e analisar quanto cada grupo contribui financeiramente, se observa os três grupos que mais demandam atenção e ação especial: **Precisam de Atenção**, **Promissores** e **Leais de Ouro**. Eles concentram o maior volume de receita e são excelentes alvos para retenção ou reengajamento. 
+
+- Mesmo sendo o menor grupo, em termos de quantidade de clientes e gastos, os Recém-Chegados possuem um grande valor: representam potencial. Aqui é possível iniciar uma jornada de relacionamento com o intuito de fidelizar esses clientes. 
+
+- Uma sugestão prática é a criação de um programa de fidelidade que siga a segmentação, oferecendo vantagens e experiências baseadas no grupo em o que cliente está inserido, isso promove a vontade de subir de grupo. 
+
 
 ---
 
